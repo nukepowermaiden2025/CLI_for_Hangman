@@ -1,0 +1,30 @@
+{
+  "name": "cli_for_hangman",
+  "version": "1.0.0",
+  "description": "This is commandline Hangaman",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nukepowermaiden2025/CLI_for_Hangman.git"
+  },
+  "keywords": [
+    "hangman",
+    "CLI",
+    "npm",
+    "inquirer\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
+    "\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C"
+  ],
+  "author": "Kourtney Reynolds",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nukepowermaiden2025/CLI_for_Hangman/issues"
+  },
+  "homepage": "https://github.com/nukepowermaiden2025/CLI_for_Hangman#readme",
+  "dependencies": {
+    "inquirer": "^5.2.0",
+    "require": "^2.4.20"
+  }
+}
