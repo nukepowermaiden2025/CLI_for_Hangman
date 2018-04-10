@@ -9,5 +9,40 @@
 //  the character or an underscore and concatenate those together.
 
 
-var require = require("./letter.js");
+var LetterProcessor = require("./letter.js");
 
+
+var CurrentWord = function(word){
+    this.wordArray = word.split("");
+
+};
+
+
+//Take the current word split up into letters so that we can process them and
+//store that letter and whether is has been guessed or not.
+CurrentWord.prototype.makeLettersArrayOfLetterObjects = function(){
+    let emptyLetterArray = [];
+    for( let i =0; i<this.wordArray.length; i++){
+        emptyLetterArray.push(new LetterProcessor(this.wordArray[i]));
+    }
+    return emptyLetterArray;
+};
+
+var newWord = new CurrentWord("Puppy");
+
+console.log(newWord.makeLettersArrayOfLetterObjects());
+console.log(newWord);
+
+CurrentWord.prototype.findLetter = function(letterGuess){
+    for (let i =0; i < this.emptyLetterArray.length; i++){
+        if(letterGuess ===this.emptyLetterArray[i].letter){
+            this.emptyLetterArray[i].hasLetterBeenGuessed = true;
+            
+        }
+    }
+};
+
+//Make a method prototye and updates letter than is guess by the user or underscore.
+//Display letter
+//Check is everything has been guess
+//export module
