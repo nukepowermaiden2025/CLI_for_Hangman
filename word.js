@@ -54,7 +54,13 @@ CurrentWord.prototype.updateWordDisplay = function(){
 
 //Check is everything has been guess
 CurrentWord.prototype.checkIfWin = function(){
+    let count = 0
     for(let i=0; i<this.emptyLetterArray.length; i++){
+        if(this.emptyLetterArray[i].hasLetterBeenGuessed&& count!==emptyLetterArray.length){//I mean to say that id tf the has letter been guessed property is still false, keep playing
+            count +=1;
+        }else{
+            console.log("You win!");
+        }
         
     }
 }
