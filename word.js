@@ -23,11 +23,11 @@ var CurrentWord = function(word){
 //Take the current word split up into letters so that we can process them and
 //store that letter and whether is has been guessed or not.
 CurrentWord.prototype.makeLettersArrayOfLetterObjects = function(){
-    let emptyLetterArray = [];
+    let LetterObjectsArray = [];
     for( let i =0; i<this.wordArray.length; i++){
-        emptyLetterArray.push(new LetterProcessor(this.wordArray[i]));
+        LetterObjectsArray.push(new LetterProcessor(this.wordArray[i]));
     }
-    return emptyLetterArray;
+    return LetterObjectsArray;
 };
 
 var newWord = new CurrentWord("Puppy");
@@ -37,9 +37,9 @@ console.log(newWord);
 //This will find the letter in the current word array and then
 //if it is found it will set the empty letter object property has been guessed equal to true.
 CurrentWord.prototype.findLetter = function(letterGuess){
-    for (let i =0; i < this.emptyLetterArray.length; i++){
-        if(letterGuess ===this.emptyLetterArray[i].letter){
-            this.emptyLetterArray[i].hasLetterBeenGuessed = true;  
+    for (let i =0; i < this.LetterObjectsArray.length; i++){
+        if(letterGuess ===this.LetterObjectsArray[i].letter){
+            this.LetterObjectsArray[i].hasLetterBeenGuessed = true;  
         }
     }
 };
@@ -47,16 +47,16 @@ console.log(newWord.findLetter)
 //Make a method prototye and updates letter that is guessed by the user or fill underscore.
 CurrentWord.prototype.updateWordDisplay = function(){
     let wordDisplay = [];
-    for(let i=0; i<this.emptyLetterArray.length; i++){
-        wordDisplay.push(this.emptyLetterArray[i].letterOrUnderscoreReveal());//This is suppose to be showing the letter or the underscore to this new word display
+    for(let i=0; i<this.LetterObjectsArray.length; i++){
+        wordDisplay.push(this.LetterObjectsArray[i].letterOrUnderscoreReveal());//This is suppose to be showing the letter or the underscore to this new word display
     }
 }
 
 //Check is everything has been guess
 CurrentWord.prototype.checkIfWin = function(){
     let count = 0
-    for(let i=0; i<this.emptyLetterArray.length; i++){
-        if(this.emptyLetterArray[i].hasLetterBeenGuessed&& count!==emptyLetterArray.length){//I mean to say that id tf the has letter been guessed property is still false, keep playing
+    for(let i=0; i<this.LetterObjectsArray.length; i++){
+        if(this.LetterObjectsArray[i].hasLetterBeenGuessed&& count!==LetterObjectsArray.length){//I mean to say that id tf the has letter been guessed property is still false, keep playing
             count +=1;
         }else{
             console.log("You win!");
