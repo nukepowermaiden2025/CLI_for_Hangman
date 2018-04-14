@@ -1,3 +1,5 @@
+import { S_IFIFO } from "constants";
+
 // **Word.js**: Contains a constructor, Word that depends on the Letter constructor. 
 // This is used to create an object representing the current word the user is attempting to
 //  guess. That means the constructor should define:
@@ -49,6 +51,11 @@ CurrentWord.prototype.updateWordDisplay = function(){
         wordDisplay.push(this.emptyLetterArray[i].letterOrUnderscoreReveal());//This is suppose to be showing the letter or the underscore to this new word display
     }
 }
-//Display letter
+
 //Check is everything has been guess
+CurrentWord.prototype.checkIfWin = function(){
+    for(let i=0; i<this.emptyLetterArray.length; i++){
+        
+    }
+}
 //export module
